@@ -4,6 +4,9 @@
     "DB_PASSWORD": "gaurav31200",
     "DB_NAME": "foodPlaces",
     "ACCESS_TOKEN": "pk.eyJ1IjoiZ2F1cmF2MzEyIiwiYSI6ImNsMDZkMXdtYTBjYjUza3IyOThuNjloMTkifQ.Ffw3bv9p56F4zWfw50tp1Q",
-    "SECRET_KEY": "Foodies_Secret_Key"
+    "SECRET_KEY": "Foodies_Secret_Key",
+    "CLOUD_NAME": "dyqmlqksn",
+    "CLOUDINARY_API_KEY": "347789726756188",
+    "CLOUDINARY_SECRET_KEY": "WG9_In-MnrIGuufj25NzGll_TeE"
   }
 }

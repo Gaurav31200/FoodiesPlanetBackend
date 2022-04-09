@@ -13,7 +13,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use("/uploads/images", express.static(path.join("uploads", "images")));
+// app.use("/uploads/images", express.static(path.join("uploads", "images")));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -33,9 +33,9 @@ app.use(() => {
 });
 
 app.use((error, req, res, next) => {
-  if (req.file) {
-    fs.unlink(req.file.path, (err) => {});
-  }
+  // if (req.file) {
+  //   fs.unlink(req.file.path, (err) => {});
+  // }
   if (res.headerSent) {
     return next(error);
   }
@@ -44,7 +44,6 @@ app.use((error, req, res, next) => {
     .status(error.code || 500)
     .json({ message: error.message || "An unknown error occured!" });
 });
-
 mongoose
   .connect(
     `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.volbc.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`

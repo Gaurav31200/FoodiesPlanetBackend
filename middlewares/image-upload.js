@@ -10,9 +10,9 @@ const MIME_TYPE_MAP = {
 const imageUpload = multer({
   limits: 600000, //bytes
   storage: multer.diskStorage({
-    destination: (req, image, cb) => {
-      cb(null, "uploads/images");
-    },
+    // destination: (req, image, cb) => {
+    //   cb(null, "uploads/images");
+    // },
     filename: (req, image, cb) => {
       const ext = MIME_TYPE_MAP[image.mimetype];
       cb(null, uuidv4() + "." + ext);
