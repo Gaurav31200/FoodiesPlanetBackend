@@ -4,6 +4,7 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 const placesRoutes = require("./routes/foodPlaces");
 const usersRoutes = require("./routes/users");
@@ -44,6 +45,7 @@ app.use((error, req, res, next) => {
     .status(error.code || 500)
     .json({ message: error.message || "An unknown error occured!" });
 });
+// console.log(process.env.DB_USERNAME);
 mongoose
   .connect(
     `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.volbc.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
